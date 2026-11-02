@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Volunteer, foster, or adoption interest form, service area, and office hours for Twin Cities Animal Rescue.">
+  <title>Contact and Get Involved | Twin Cities Animal Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Open+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue logo: a teal outline of a cat face shaped like a house" width="120" height="111">
+    <p>Twin Cities Animal Rescue</p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Adopt, Foster, and Volunteer</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" aria-current="page">Contact and Get Involved</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us and Get Involved</h1>
+    <p>Interested in volunteering, fostering, or adopting? Fill out the form below and a coordinator will reply within two business days. Fields marked with an asterisk (*) are required.</p>
+
+    <section>
+      <h2>Volunteer and Foster Interest Form</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your Contact Information</legend>
+          <p>
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="80">
+          </p>
+          <p>
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </p>
+          <p>
+            <label for="phone">Phone number (optional, format 612-555-0147)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>I am interested in *</legend>
+          <p>
+            <input type="radio" id="interest-volunteer" name="interest" value="volunteer" required>
+            <label for="interest-volunteer">Volunteering</label>
+          </p>
+          <p>
+            <input type="radio" id="interest-foster" name="interest" value="foster">
+            <label for="interest-foster">Fostering</label>
+          </p>
+          <p>
+            <input type="radio" id="interest-adoption" name="interest" value="adoption">
+            <label for="interest-adoption">Adoption information</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Availability and Experience</legend>
+          <p>
+            <label for="availability">When are you usually available? *</label>
+            <select id="availability" name="availability" required>
+              <option value="">Choose one</option>
+              <option value="weekday-mornings">Weekday mornings</option>
+              <option value="weekday-evenings">Weekday evenings</option>
+              <option value="weekends">Weekends</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </p>
+          <p>
+            <label for="start-date">Earliest start date</label>
+            <input type="date" id="start-date" name="start-date" min="2026-01-01">
+          </p>
+          <p>
+            <label for="experience">Experience with pets *</label>
+            <select id="experience" name="experience" required>
+              <option value="">Choose one</option>
+              <option value="none">No experience yet</option>
+              <option value="own-pets">I have owned pets</option>
+              <option value="rescue">I have volunteered or fostered before</option>
+              <option value="professional">Professional animal care experience</option>
+            </select>
+          </p>
+          <p>
+            <label for="message">Short message *</label>
+            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+          </p>
+        </fieldset>
+
+        <p><button type="submit">Send My Interest Form</button></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Service Area</h2>
+      <p>We accept animals and place pets with families in Minneapolis, St. Paul, and the surrounding suburbs of Hennepin, Ramsey, Anoka, Dakota, and Washington counties.</p>
+      <address>
+        Twin Cities Animal Rescue<br>
+        1450 Riverside Avenue<br>
+        Minneapolis, MN 55454<br>
+        Phone: <a href="tel:+16125550147">(612) 555-0147</a><br>
+        Email: <a href="mailto:hello@twincitiesrescue.org">hello@twincitiesrescue.org</a>
+      </address>
+    </section>
+
+    <section>
+      <h2>Office Hours</h2>
+      <ul>
+        <li>Monday to Friday: 10:00 a.m. to 6:00 p.m.</li>
+        <li>Saturday: 10:00 a.m. to 4:00 p.m. (adoption visits by appointment)</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Twin Cities Animal Rescue, 1450 Riverside Avenue, Minneapolis, MN 55454</p>
+    <p>Phone: <a href="tel:+16125550147">(612) 555-0147</a> | Email: <a href="mailto:hello@twincitiesrescue.org">hello@twincitiesrescue.org</a></p>
+    <p>&copy; 2026 Twin Cities Animal Rescue. A 501(c)(3) nonprofit organization.</p>
+  </footer>
+</body>
+</html>
