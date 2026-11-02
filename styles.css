@@ -308,6 +308,112 @@ address {
   font-style: normal;
 }
 
+/* ---------- JavaScript features ---------- */
+[hidden] {
+  display: none !important;
+}
+
+/* validation messages sit right under their field */
+.error {
+  padding: 0.4rem 0.75rem;
+  border-left: 4px solid var(--peach);
+  background: rgb(232 166 110 / 0.2);
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.error::before {
+  content: "⚠ ";
+}
+
+[aria-invalid="true"] {
+  border-color: var(--charcoal);
+  box-shadow: 0 0 0 3px var(--peach);
+}
+
+fieldset[aria-invalid="true"] {
+  box-shadow: none;
+  border-width: 3px;
+}
+
+.form-status,
+.saved-roles {
+  padding: var(--space);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* volunteer role finder (services page) */
+#role-finder > h3 {
+  margin-top: calc(var(--space) * 1.5);
+}
+
+#role-finder label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  margin: 0 0 var(--space);
+  padding: 0;
+  list-style: none;
+}
+
+.role-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: var(--space);
+  border: 2px solid var(--peach);
+  border-radius: var(--radius);
+}
+
+.role-list h3,
+.role-list p {
+  margin: 0;
+}
+
+.role-times {
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.save-role {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--teal);
+  background: var(--cream);
+  color: var(--teal);
+}
+
+.save-role[aria-pressed="true"] {
+  background: var(--teal);
+  color: var(--cream);
+}
+
+.shortlist {
+  padding: var(--space);
+  border-radius: var(--radius);
+  background: var(--teal);
+  color: var(--cream);
+}
+
+.shortlist h3,
+.shortlist a {
+  margin-top: 0;
+  color: var(--cream);
+}
+
+.shortlist a:hover {
+  color: var(--peach);
+}
+
 /* ---------- Footer ---------- */
 footer {
   display: flex;

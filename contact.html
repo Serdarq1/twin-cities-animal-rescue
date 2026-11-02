@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Open+Sans:wght@400;600&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -30,24 +31,29 @@
 
     <section>
       <h2>Volunteer and Foster Interest Form</h2>
-      <form action="#" method="post">
+      <p id="saved-roles" class="saved-roles" hidden>Roles on your volunteer list: <strong id="saved-roles-list"></strong>. <a href="services.html#volunteer">Change your list</a></p>
+      <form id="interest-form" action="#" method="post">
+        <input type="hidden" id="roles" name="roles">
         <fieldset>
           <legend>Your Contact Information</legend>
           <p>
             <label for="name">Full name *</label>
-            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="80">
+            <input type="text" id="name" aria-describedby="name-error" name="name" autocomplete="name" required minlength="2" maxlength="80">
+            <span class="error" id="name-error" hidden></span>
           </p>
           <p>
             <label for="email">Email address *</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <input type="email" id="email" aria-describedby="email-error" name="email" autocomplete="email" required>
+            <span class="error" id="email-error" hidden></span>
           </p>
           <p>
             <label for="phone">Phone number (optional, format 612-555-0147)</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <input type="tel" id="phone" aria-describedby="phone-error" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <span class="error" id="phone-error" hidden></span>
           </p>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="interest-group" aria-describedby="interest-error">
           <legend>I am interested in *</legend>
           <p>
             <input type="radio" id="interest-volunteer" name="interest" value="volunteer" required>
@@ -61,41 +67,47 @@
             <input type="radio" id="interest-adoption" name="interest" value="adoption">
             <label for="interest-adoption">Adoption information</label>
           </p>
+          <span class="error" id="interest-error" hidden></span>
         </fieldset>
 
         <fieldset>
           <legend>Availability and Experience</legend>
           <p>
             <label for="availability">When are you usually available? *</label>
-            <select id="availability" name="availability" required>
+            <select id="availability" aria-describedby="availability-error" name="availability" required>
               <option value="">Choose one</option>
               <option value="weekday-mornings">Weekday mornings</option>
               <option value="weekday-evenings">Weekday evenings</option>
               <option value="weekends">Weekends</option>
               <option value="flexible">Flexible</option>
             </select>
+            <span class="error" id="availability-error" hidden></span>
           </p>
           <p>
             <label for="start-date">Earliest start date</label>
-            <input type="date" id="start-date" name="start-date" min="2026-01-01">
+            <input type="date" id="start-date" aria-describedby="start-date-error" name="start-date" min="2026-01-01">
+            <span class="error" id="start-date-error" hidden></span>
           </p>
           <p>
             <label for="experience">Experience with pets *</label>
-            <select id="experience" name="experience" required>
+            <select id="experience" aria-describedby="experience-error" name="experience" required>
               <option value="">Choose one</option>
               <option value="none">No experience yet</option>
               <option value="own-pets">I have owned pets</option>
               <option value="rescue">I have volunteered or fostered before</option>
               <option value="professional">Professional animal care experience</option>
             </select>
+            <span class="error" id="experience-error" hidden></span>
           </p>
           <p>
             <label for="message">Short message *</label>
-            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+            <textarea id="message" aria-describedby="message-error" name="message" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+            <span class="error" id="message-error" hidden></span>
           </p>
         </fieldset>
 
         <p><button type="submit">Send My Interest Form</button></p>
+        <p id="form-status" class="form-status" role="status" hidden></p>
       </form>
     </section>
 

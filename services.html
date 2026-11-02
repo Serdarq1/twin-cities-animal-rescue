@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Open+Sans:wght@400;600&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -58,7 +59,7 @@
       <div>
         <h2>Volunteer Roles</h2>
         <p>Volunteers must be 16 or older and complete a two-hour orientation.</p>
-        <dl>
+        <dl id="role-static">
           <dt>Dog Walker</dt>
           <dd>Walk and exercise dogs at our center. Shifts are two hours, mornings or evenings.</dd>
           <dt>Cat Socializer</dt>
@@ -68,6 +69,29 @@
           <dt>Transport Driver</dt>
           <dd>Drive animals to vet appointments and foster homes using your own vehicle.</dd>
         </dl>
+
+        <div id="role-finder" hidden>
+          <h3>Find a Role That Fits Your Schedule</h3>
+          <p>
+            <label for="role-filter">When are you usually available?</label>
+            <select id="role-filter">
+              <option value="all">Show all roles</option>
+              <option value="weekday-mornings">Weekday mornings</option>
+              <option value="weekday-evenings">Weekday evenings</option>
+              <option value="weekends">Weekends</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </p>
+          <p id="role-count" aria-live="polite"></p>
+          <ul id="role-list" class="role-list"></ul>
+
+          <aside class="shortlist" aria-labelledby="shortlist-title">
+            <h3 id="shortlist-title">My Volunteer List</h3>
+            <p id="shortlist-empty">No roles saved yet. Choose "Add to my list" on any role above.</p>
+            <ul id="shortlist" aria-live="polite"></ul>
+            <p id="shortlist-next" hidden>Your list is saved on this device. <a href="contact.html">Send it with the interest form</a>.</p>
+          </aside>
+        </div>
       </div>
     </section>
 
